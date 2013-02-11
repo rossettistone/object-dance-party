@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Object Dance Party</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="src/dancerPrototype.js"></script>
+  <script src="src/moshPitDancer.js"></script>
+  <script src="src/raveDancer.js"></script>
+  <script src="src/blinkyDancer.js"></script>
+  <script src="src/danceFloor.js"></script>
+  <script src="src/controls.js"></script>
+  <script src="src/main.js"></script>
+  <!-- <script src="src/mixIn.js"></script> -->
+
+</head>
+<body>
+  <div id="lightBox" class="lightSwitch">
+    <div id="lightBoxContent">
+      <h1>Bance Dattle!</h1>
+      <p>Clicking one of the buttons tells the dance floor to create the appropriate dancer on the stage. All dancers are created at random locations.</p>
+      <ul>
+        <li><b>Blinky Dancer:</b>
+          <ul>Uses a set interval to toggle visibility on and off.</ul>
+        </li>
+
+        <li><b>Rave Dancer:</b>
+          <ul>Cycles through an array of colors ('#FF00CC','#F7FF00','#5EFF00','#00FFF2') using Math.random and array.length.</ul>
+        </li>
+        <li><b>Mosh Pit Dancer:</b></li>
+          <ul>Mosh pit dancers are created in a separate div. This div is given a random position every interval, and modulus is used to keep it on the screen. The individual dancers are also each given a random position, mod 100 to keep them inside the div.</ul>
+      </ul>
+    </div>
+  </div>
+  <div class="topbar">
+    <span class="title">object dance party</span>
+    <span class="clickable" data-dancer-creator="BlinkyDancer">
+      <a href="#">make a dancer</a>
+    </span>
+    <span class="clickable" data-dancer-creator="RaveDancer">
+      <a href="#">make a rave dancer</a>
+    </span>
+    <span class="clickable" data-dancer-creator="MoshPitDancer">
+      <a href="#">make a mosh dancer</a>
+    </span>
+    <span class="lightSwitch">
+      <a href="#">How does this work?</a>
+    </span>
+  </div>
+  <div class="stage">
+    <div id="moshPit"></div>
+  </div>
+</body>
+</html>
